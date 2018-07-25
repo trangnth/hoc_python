@@ -2,5 +2,7 @@
 
 #### Tài liệu:
 
+https://www.w3resource.com/python-exercises/python-conditional-statements-and-loop-exercises.php
+
 https://github.com/hocchudong/ghichep-python
 
