@@ -1,10 +1,11 @@
+# Mo file, in dong trong file
 name = input ('Enter file: ')
 handle = open (name, 'r')
-counts = dict()
+# counts = dict()
 
 for line in handle:
     words = line.split()
-#    print (words)
+    print (words)
     print (line)
 #    for word in words:
 #        print (word)

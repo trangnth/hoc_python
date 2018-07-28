@@ -1,3 +1,4 @@
+# Lab if-else, if-elif-else
 var1 = 100
 if var1 == 100: 
     print ("1 - Nhan mot gia tri bang 100")

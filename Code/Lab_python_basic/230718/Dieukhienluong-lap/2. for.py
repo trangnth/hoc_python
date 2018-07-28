@@ -1,3 +1,4 @@
+# In cac phan tu cua mang
 for x in 'Meditech':
     print (x)
 
@@ -5,11 +6,11 @@ qua = ['chuoi', 'tao', 'xoai']
 for qua in qua:
     print (qua)
 
-#### Cach duoi day cung tuong tu
+#### Cach 2
 for index in range(len(qua)):
    print ('Ban co thich an :', qua[index])
 
-#### for and else
+#### eg for and else
 for num in range (10,20):
     for i in range (2,num):
         if num%i == 0:

@@ -1,14 +1,6 @@
-hello = "Hello World!"
-print(hello)
+# Lab with join va split
 
-x = round(10 / 3, 1)
-print(x)
-
-x = "ha"
-y = "hi"
-print ('%s %s %d' % (x,y,10))
-
-################# join()
+# join()
 join_str = "Meditech"
 print (" ".join(join_str))
 
@@ -18,7 +10,10 @@ join_list = ["toi", "la", "Trang"]
 print (join_list)
 print (" ".join(join_list))
 
-################# split () ## Phan biet chu hoa va chu thuong
+# split () ## Phan biet chu hoa va chu thuong
+# Tach chuoi theo dau cach
 split_str = "ten toi la trang"
 print (split_str.split(" "))
+
+# Tach phan tu dau cua chuoi theo ky tu "o"
 print (join_list[0].split("o"))

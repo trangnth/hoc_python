@@ -1,4 +1,5 @@
-# python test.py arg1 arg2 arg3
+# Truyền tham số vào chương trình, lấy ra số lương tham số và danh sách các tham số
+# Command: python test.py arg1 arg2 arg3
 
 import sys
 
