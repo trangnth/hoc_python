@@ -23,11 +23,7 @@ def check_cpu():
 def check_ram():
 	ram["mem_total"] = psutil.virtual_memory().total
 
-	
-print("haha")
-
 #if __name__ == "__main__":
-#json_parse()
 check_os()
 check_ram()
 check_cpu()
@@ -35,3 +31,9 @@ data["os"] = os
 data["cpu"] = cpu
 data["ram"] = ram
 print(data)
+#str = json.dumps(data,indent=2)
+#print(str)
+
+### output file
+with open('infoOS.json', 'w') as f:
+	json.dump(data,f,indent=2)
