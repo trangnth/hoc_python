@@ -5,8 +5,6 @@ import platform
 import psutil
 import json
 
-
-
 def info_os():
 	data = {}
 	# check_distro	
