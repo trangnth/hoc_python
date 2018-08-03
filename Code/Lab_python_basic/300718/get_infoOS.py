@@ -1,4 +1,4 @@
-# Get info OS, RAM, CPU. print json 
+# Get info OS, RAM, CPU, trả về dạng json
 # Sử dụng cho cả Windows và Ubuntu 
 
 import platform
@@ -9,7 +9,7 @@ def info_os():
 	data = {}
 	# check_distro	
 	data["platform"] = platform.platform()
-
+	
 	# check_cpu():
 	data["cpu_count:"] = psutil.cpu_count()
 
