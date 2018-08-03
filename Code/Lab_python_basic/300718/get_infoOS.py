@@ -16,7 +16,7 @@ def info_os():
 	# check_ram():
 	mem = psutil.virtual_memory().total / (1024**3)
 	data["mem_total"] = round(mem,2)
-	
+		
 	return data
 
 ### output file
