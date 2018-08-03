@@ -1,11 +1,14 @@
 # Get info OS, RAM, CPU. print json 
 # Sử dụng cho cả Windows và Ubuntu 
 
-import platform, psutil, json
+import platform
+import psutil
+import json
 
-data = {}
 
-def check_os():
+
+def info_os():
+	data = {}
 	# check_distro	
 	data["platform"] = platform.platform()
 
@@ -16,10 +19,10 @@ def check_os():
 	mem = psutil.virtual_memory().total / (1024**3)
 	data["mem_total"] = round(mem,2)
 	
-	print(data)
+	return data
 
-	### output file
-	with open('infoOS.json', 'w') as f:
-		json.dump(data,f,indent=2)
+### output file
+#with open('infoOS.json', 'w') as f:
+#	json.dump(data,f,indent=2)
 
 #if __name__ == "__main__":

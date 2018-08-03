@@ -1,5 +1,5 @@
 {
-  "distro": "Windows-10-10.0.17134-SP0",
+  "platform": "Windows-10-10.0.17134-SP0",
   "cpu_count:": 4,
   "mem_total": 3.89
 }
