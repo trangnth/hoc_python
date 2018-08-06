@@ -32,7 +32,7 @@ class Point:
 
     def cosinPoint(self, d):
         if self.x == d.x and self.y == d.y:
-            return False
+            return "Diem trung nhau!"
         elif self.x == d.x:
             return 0
         elif self.y == d.y:
@@ -40,3 +40,22 @@ class Point:
         else:
             dist = sqrt((self.x - d.x)**2 + (self.y - d.y)**2)
             return (abs(self.x - d.x) / dist)
+
+def main():
+    p1 = Point(1,1)
+    p2 = Point(4,3)
+    p3 = Point(3,4)
+
+    p1.showPoint()
+
+    p2.scale(2,3)
+    p2.showPoint()
+
+    p1.resetPoint()
+    p1.showPoint()
+
+    print(p2.distancePoint(p3))
+    print(p1.cosinPoint(p2))
+
+if __name__ == "__main__":
+    main()
