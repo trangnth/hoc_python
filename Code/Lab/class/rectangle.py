@@ -1,3 +1,12 @@
+'''
+Xây dựng class hinh chữ nhật:
++ check xem có phải hình hcn ko
++ Tính chu vi
++ Tính diện tích
++ Class hình vuông, kế thừa từ class hình chữ nhật, cũng có các thuộc tính tương tự
+
+'''
+
 from point import Point
 
 class Rectangle :
