@@ -1,14 +1,13 @@
 # Post request len trang cachet.com phai authentication
 
 import requests
-from requests.auth import HTTPBasicAuth
 
 headers = {}
-d = {}
 headers['Content-Type'] = 'application/json;'
 headers['X-Cachet-Token'] = "9yMHsdioQosnyVK4iCVR"
 
 # components post
+#d = {}
 #url = "https://demo.cachethq.io/api/v1/components"
 #d = '{"name":"API","description":"An example description","status":1}'
 #response = requests.post(url, data = d, headers = headers)
