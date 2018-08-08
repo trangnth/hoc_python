@@ -55,8 +55,7 @@ class Rectangle:
         cen = Point(x/4, y/4)
         return cen
 
-    def distanceCentroid(self, r):
-        return self.centroid().distancePoint(r.centroid())
+    
 
 
 class Square(Rectangle):
@@ -106,7 +105,9 @@ def main():
         print("r2 is not square.")
 
     print("================")
-    print("Distance Centroids:", r2.distanceCentroid(r1))
+    # def distanceCentroid(self, r):
+    #     return 
+    print("Distance Centroids:", r1.centroid().distancePoint(r2.centroid()))
 
  
 if __name__ == "__main__":
