@@ -4,7 +4,6 @@ Xây dựng class hinh chữ nhật:
 + Tính chu vi
 + Tính diện tích
 + Class hình vuông, kế thừa từ class hình chữ nhật, cũng có các thuộc tính tương tự
-
 '''
 
 from point import Point
@@ -55,9 +54,6 @@ class Rectangle:
         cen = Point(x/4, y/4)
         return cen
 
-    
-
-
 class Square(Rectangle):
     def isSquare(self):
         if self.getLength() == self.getWidth():
@@ -94,19 +90,15 @@ def main():
         print("r1 is not rectangle.")
 
     print("================")
-
     if r2.isSquare() == True:  
         print("width =", r2.getWidth())
         print("Area: ", r2.area())
         print("Perimeter: ", r2.perimeter())
         print("Centroid: (", r2.centroid().x, ",", r2.centroid().y, ")")
-        
     else:
         print("r2 is not square.")
 
     print("================")
-    # def distanceCentroid(self, r):
-    #     return 
     print("Distance Centroids:", r1.centroid().distancePoint(r2.centroid()))
 
  
