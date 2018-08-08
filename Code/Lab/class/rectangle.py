@@ -10,15 +10,12 @@ Xây dựng class hinh chữ nhật:
 from point import Point
 from math import sqrt
 
-class Rectangle :
-    
+class Rectangle :  
     def __init__(self, p1, p2, p3, p4): 
         listPoint = [p1, p2, p3, p4]
         self.listDist = []
 
         for i, x in enumerate(listPoint):
-            if i == 4:
-                break
             for j in range(i+1, 4):
                 self.listDist.append(x.distancePoint(listPoint[j]))               
         self.listDist.sort()
@@ -32,20 +29,23 @@ class Rectangle :
     def getLength(self):
         if self.isRect():
             return self.listDist[2]
+        else:
+            raise Exception('It is not Rectangle.')
 
     def getWidth(self):
         if self.isRect():
             return self.listDist[0]
+        else:
+            raise Exception('It is not Rectangle.')
 
     def area(self):
-        return (self.getLength()) * (self.getWidth())
+        return self.getLength() * self.getWidth()
 
     def perimeter(self):
         return (self.getLength() + self.getWidth())*2
 
 
 class Square(Rectangle):
-
     def isSquare(self):
             if self.getLength() == self.getWidth():
                 return True
@@ -67,6 +67,8 @@ def main():
 
     r2 = Square(p8, p5, p6, p7)
 
+    r3 = Rectangle(p1, p2, p4, p7)
+
     if r1.isRect() == True:
         print("width =", r1.getWidth())
         print("height =", r1.getLength())
@@ -77,8 +79,7 @@ def main():
 
     print("================")
 
-    if r2.isSquare() == True:
-        
+    if r2.isSquare() == True:  
         print("width =", r2.getWidth())
         print("Area: ", r2.area())
         print("Perimeter: ", r2.perimeter())
