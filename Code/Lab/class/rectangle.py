@@ -13,14 +13,14 @@ from math import sqrt
 class Rectangle :
     
     def __init__(self, p1, p2, p3, p4): 
-        self.listPoint = [p1, p2, p3, p4]
+        listPoint = [p1, p2, p3, p4]
         self.listDist = []
 
-        for i, x in enumerate(self.listPoint):
+        for i, x in enumerate(listPoint):
             if i == 4:
                 break
             for j in range(i+1, 4):
-                self.listDist.append(x.distancePoint(self.listPoint[j]))               
+                self.listDist.append(x.distancePoint(listPoint[j]))               
         self.listDist.sort()
 
     def isRect(self):        
