@@ -29,14 +29,14 @@ class Rectangle :
     def getLength(self):
         if self.isRect():
             return self.listDist[2]
-        else:
-            raise Exception('It is not Rectangle.')
+        # else:
+        #     raise Exception('It is not Rectangle.')
 
     def getWidth(self):
         if self.isRect():
             return self.listDist[0]
-        else:
-            raise Exception('It is not Rectangle.')
+        # else:
+        #     raise Exception('It is not Rectangle.')
 
     def area(self):
         return self.getLength() * self.getWidth()
@@ -68,6 +68,13 @@ def main():
     r2 = Square(p8, p5, p6, p7)
 
     r3 = Rectangle(p1, p2, p4, p7)
+    r3.getLength()
+
+    try:
+        print(r3.getLength())
+        r3.area()
+    except:
+        print("It is not rectangle.")
 
     if r1.isRect() == True:
         print("width =", r1.getWidth())
