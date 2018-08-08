@@ -54,6 +54,9 @@ def main():
     p1.resetPoint()
     p1.showPoint()
 
+    print(p1.x)
+    print(p2.y)
+
     print(p2.distancePoint(p3))
     print(p1.cosinPoint(p2))
 

@@ -10,14 +10,17 @@ Xây dựng class hinh chữ nhật:
 from point import Point
 from math import sqrt
 
-class Rectangle :  
+class Rectangle:  
+    """
+    This is class rectangle
+    """
     def __init__(self, p1, p2, p3, p4): 
-        listPoint = [p1, p2, p3, p4]
+        self.listPoint = [p1, p2, p3, p4]
         self.listDist = []
 
-        for i, x in enumerate(listPoint):
+        for i, x in enumerate(self.listPoint):
             for j in range(i+1, 4):
-                self.listDist.append(x.distancePoint(listPoint[j]))               
+                self.listDist.append(x.distancePoint(self.listPoint[j]))               
         self.listDist.sort()
 
     def isRect(self):        
@@ -29,14 +32,14 @@ class Rectangle :
     def getLength(self):
         if self.isRect():
             return self.listDist[2]
-        # else:
-        #     raise Exception('It is not Rectangle.')
+        else:
+            raise ValueError('It is not Rectangle.')
 
     def getWidth(self):
         if self.isRect():
             return self.listDist[0]
-        # else:
-        #     raise Exception('It is not Rectangle.')
+        else:
+            raise ValueError('It is not Rectangle.')
 
     def area(self):
         return self.getLength() * self.getWidth()
@@ -44,15 +47,27 @@ class Rectangle :
     def perimeter(self):
         return (self.getLength() + self.getWidth())*2
 
+    def centroid(self):
+        x = y = 0
+        for p in self.listPoint:
+            x += p.x
+            y += p.y
+        cen = Point(x/4, y/4)
+        return cen
+
+    def distanceCentroid(self, r):
+        return self.centroid().distancePoint(r.centroid())
+
 
 class Square(Rectangle):
     def isSquare(self):
-            if self.getLength() == self.getWidth():
-                return True
+        if self.getLength() == self.getWidth():
+            return True
+        else:
+            return False
 
 
-def main():
-    
+def main():    
     p1 = Point(1,4)
     p2 = Point(5,4)
     p3 = Point(5,2)
@@ -66,21 +81,16 @@ def main():
     p8 = Point(3, 1)
 
     r2 = Square(p8, p5, p6, p7)
-
     r3 = Rectangle(p1, p2, p4, p7)
-    r3.getLength()
 
-    try:
-        print(r3.getLength())
-        r3.area()
-    except:
-        print("It is not rectangle.")
+    #r3.getWidth()
 
     if r1.isRect() == True:
         print("width =", r1.getWidth())
         print("height =", r1.getLength())
         print("Area: ", r1.area())
         print("Perimeter: ", r1.perimeter())
+        print("Centroid: (",r1.centroid().x, ",", r1.centroid().y, ")")
     else:
         print("r1 is not rectangle.")
 
@@ -90,8 +100,13 @@ def main():
         print("width =", r2.getWidth())
         print("Area: ", r2.area())
         print("Perimeter: ", r2.perimeter())
+        print("Centroid: (", r2.centroid().x, ",", r2.centroid().y, ")")
+        
     else:
         print("r2 is not square.")
+
+    print("================")
+    print("Distance Centroids:", r2.distanceCentroid(r1))
 
  
 if __name__ == "__main__":
