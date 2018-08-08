@@ -12,45 +12,44 @@ from math import sqrt
 
 class Rectangle :
     
-    def __init__(self, p1, p2, p3, p4):       
-        self.p1 = p1
-        self.p2 = p2
-        self.p3 = p3
-        self.p4 = p4
+    def __init__(self, p1, p2, p3, p4): 
+        self.listPoint = [p1, p2, p3, p4]
+        self.listDist = []
 
-    def isRect(self):
-        if self.p1.distancePoint(self.p2) != self.p3.distancePoint(self.p4):
-            return False
-        elif self.p1.distancePoint(self.p3) != self.p2.distancePoint(self.p4):
-            return False
-        elif self.p1.distancePoint(self.p4) != self.p3.distancePoint(self.p2):
-            return False
-        else:
-            self.height = min(self.p1.distancePoint(self.p2), self.p1.distancePoint(self.p3), self.p1.distancePoint(self.p4))
-            d = max(self.p1.distancePoint(self.p2), self.p1.distancePoint(self.p3), self.p1.distancePoint(self.p4))
-            self.width = round(sqrt(d**2 - self.height**2),1)
-            return True
+        for i, x in enumerate(self.listPoint):
+            if i == 4:
+                break
+            for j in range(i+1, 4):
+                self.listDist.append(x.distancePoint(self.listPoint[j]))               
+        self.listDist.sort()
+
+    def isRect(self):        
+        for i in range(0,6,2):
+            if self.listDist[i] != self.listDist[i+1]:
+                return False
+        return True
+
+    def getLength(self):
+        if self.isRect():
+            return self.listDist[2]
 
     def getWidth(self):
-        return self.width
-
-    def getHeight(self):
-        return self.height
+        if self.isRect():
+            return self.listDist[0]
 
     def area(self):
-        return self.width * self.height
+        return (self.getLength()) * (self.getWidth())
 
     def perimeter(self):
-        return (self.width + self.height)*2
+        return (self.getLength() + self.getWidth())*2
+
 
 class Square(Rectangle):
 
     def isSquare(self):
-        if self.isRect() == True:
-            if self.getWidth() == self.getHeight():
+            if self.getLength() == self.getWidth():
                 return True
-        else:
-            return False
+
 
 def main():
     
@@ -69,19 +68,18 @@ def main():
     r2 = Square(p8, p5, p6, p7)
 
     if r1.isRect() == True:
-        print ("width =", r1.getWidth())
-        print("height =", r1.getHeight())
+        print("width =", r1.getWidth())
+        print("height =", r1.getLength())
         print("Area: ", r1.area())
         print("Perimeter: ", r1.perimeter())
-        #print(Rectangle.width)
-
     else:
         print("r1 is not rectangle.")
 
     print("================")
 
     if r2.isSquare() == True:
-        print("height =", r2.getHeight())
+        
+        print("width =", r2.getWidth())
         print("Area: ", r2.area())
         print("Perimeter: ", r2.perimeter())
     else:
