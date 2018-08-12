@@ -1,3 +1,5 @@
+#!C:\env\env\Scripts\python.exe
+
 from main import main
 import os
 import argparse
