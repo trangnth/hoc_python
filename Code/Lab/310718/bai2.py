@@ -2,6 +2,7 @@
 
 import random
 
+#print ("aaaa")
 def random_line(f):
 	lines = open(f).read().splitlines()
 	print (random.choice(lines))

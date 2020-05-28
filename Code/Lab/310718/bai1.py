@@ -2,5 +2,5 @@
 
 import calendar
 
-cal = calendar.year(2018, 8)
+cal = calendar.month(2018, 8)
 print (cal)
